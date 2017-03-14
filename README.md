@@ -1,4 +1,4 @@
-# Super puper registration form
+# react-redux-app
 ### Installation
 ```sh
 $ sudo npm install -g create-react-app

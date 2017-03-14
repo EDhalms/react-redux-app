@@ -1,0 +1,54 @@
+.b-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.b-header__container {
+    padding: 5px 20px;
+    z-index: 10;
+}
+
+.b-header__logo {
+    float: left;
+    padding: 20px 0;
+}
+
+.b-header__logo a {
+    color: #fff;
+}
+
+.b-header__logo a:hover {
+    opacity: .7;
+}
+
+.b-header__nav {
+    float: left;
+    padding-left: 30px;
+}
+
+.b-header__item {
+    float: left;
+}
+
+.b-header__link {
+    display: block;
+    padding: 20px;
+    color: #fff;
+}
+
+.b-header__link.active {
+    cursor: default;
+    color: #8D9FFF;
+}
+
+.b-header__link.active:hover {
+    opacity: 1;
+}
+
+.b-header__link:hover {
+    opacity: .7;
+}

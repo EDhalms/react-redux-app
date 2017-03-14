@@ -4,13 +4,13 @@ import Header from './templates/Header';
 
 import '../reset.css';
 import '../App.css';
+import './templates/Header.css';
 
 class App extends Component {
   render() {
     return (
         <div className="App">
-            <Header />
-            <h1>App - root</h1>
+            <Header route={this.props.location.pathname} />
             {this.props.children}
         </div>
     );

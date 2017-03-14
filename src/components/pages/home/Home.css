@@ -1,0 +1,5 @@
+.b-home__banner {
+    height: 332px;
+    background: url("../../../../public/img/banner-bg.jpg") 0 0 no-repeat;
+    background-size: cover;
+}

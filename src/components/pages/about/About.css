@@ -1,0 +1,5 @@
+.b-about__banner {
+    height: 700px;
+    background: url("../../../../public/img/banner-bg-blog-3.jpg") 0 0 no-repeat;
+    background-size: cover;
+}
