@@ -5,11 +5,15 @@ class Blog extends Component {
     render() {
         return (
             <div className="b-blog">
-                <div className="b-blog__banner"></div>
+                <div className="g-banner m-banner_blog">
+                    <div className="g-banner__container g-container">
+                        <h1 className="g-banner__title">Blog</h1>
+                    </div>
+                </div>
                 <div className="b-blog__container g-container">
 
                 </div>
-                <h1>Blog</h1>
+
             </div>
         );
     }

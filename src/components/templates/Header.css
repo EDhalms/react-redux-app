@@ -5,6 +5,13 @@
     width: 100%;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color, background-color, border-bottom-color .3s;
+}
+
+.b-header.scroll {
+    color: #555;
+    background-color: #fff;
+    border-bottom-color: #999;
 }
 
 .b-header__container {
@@ -15,6 +22,7 @@
 .b-header__logo {
     float: left;
     padding: 20px 0;
+    font-weight: 900;
 }
 
 .b-header__logo a {
@@ -25,9 +33,17 @@
     opacity: .7;
 }
 
+.b-header a {
+    transition: all .3s;
+}
+
+.b-header.scroll a {
+    color: #555;
+}
+
 .b-header__nav {
     float: left;
-    padding-left: 30px;
+    padding-left: 60px;
 }
 
 .b-header__item {

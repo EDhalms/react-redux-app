@@ -46,36 +46,24 @@ class Header extends Component {
         document.removeEventListener('scroll', this.onHandleScroll);
     }
 
-    onHandleScroll = (e) => {
-       console.log(window.pageYOffset);
-        // console.log(this);
-        //this.props.pageScroll(true);
-        console.log(this.props.pageIsScrolling);
-        // console.log(window.pageYOffset);
-        //
-        // console.log(this);
-        //
+    onHandleScroll = () => {
         if (window.pageYOffset && !this.props.pageIsScrolling) {
-            console.log('one');
             this.props.pageScroll(true);
         } else if (!window.pageYOffset) {
-            console.log('two');
             this.props.pageScroll(false);
         }
     };
 
     render() {
+
         const items = [
             {name: 'About', route: 'about'},
             {name: 'Blog', route: 'blog'}
         ];
-        //console.log(this.props);
-        console.log(this.props.pageIsScrolling);
-
-        this.onHandleScroll();
+        //this.onHandleScroll();
 
         return (
-            <header className="b-header">
+            <header className={`b-header ${this.props.pageIsScrolling ? 'scroll' : ''}`}>
                 <div className="b-header__container g-container g-clearfix">
                     <div className="b-header__logo">
                         <a href="/">React-redux-app</a>

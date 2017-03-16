@@ -1,20 +1,45 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import Home from './Home';
+
 import './Home.css';
 
-class Home extends Component {
-    render() {
-        return (
-            <div className="b-home">
-                <div className="b-home__banner"></div>
-                <div className="b-home__container g-container">
+import * as tabsActions from '../../../actions/tabs';
 
-                </div>
-                <h1>Home</h1>
-            </div>
+function mapStateToProps(state) {
+    return {
+        currentTab: state.tabs.homeTabs.currentTab
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        toggleHomeTabs: tabsActions.toggleHomeTabs
+    }, dispatch)
+}
+
+class HomeContainer extends Component {
+
+    constructor(props) {
+        super(props);
+    };
+
+    render() {
+
+        return (
+            <Home
+                currentTab={this.props.currentTab}
+                toggleHomeTabs={this.props.toggleHomeTabs}
+            />
         );
     }
 }
 
-export default Home;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HomeContainer);
 
 
