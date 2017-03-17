@@ -52,3 +52,11 @@
 .b-tabs__content.active {
     display: block;
 }
+
+.b-tabs__description {
+
+}
+
+.b-tabs__description-paragraph {
+    padding-bottom: 20px;
+}

@@ -1,9 +1,9 @@
-.App {
-    height: 4000px;
-}
-
 a {
     transition: color, opacity .3s;
+}
+
+.g-page {
+    height: 4000px;
 }
 
 .g-clearfix:before,
@@ -38,4 +38,21 @@ a {
     font-size: 40px;
     color: #fff;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.g-btn {
+    display: block;
+    padding: 0 20px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    background: #876fc3;
+    font-size: 16px;
+    line-height: 25px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.g-btn:hover {
+    opacity: .8;
 }
