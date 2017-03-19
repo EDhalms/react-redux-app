@@ -1,8 +1,4 @@
-.b-popup {
-
-}
-
-.b-popup__overlay {
+.b-popup-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -26,6 +22,10 @@
     width: 100%;
     max-width: 500px;
     line-height: 1.3;
+}
+
+.b-popup.open {
+    display: block;
 }
 
 .b-popup__container {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import PopupOverlay from '../../widgets/PopupOverlay';
 import Popup from '../../widgets/Popup';
 
 import './Home.css';
@@ -46,7 +47,10 @@ class Home extends Component {
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <button className="b-tabs__btn g-btn">Show single popup</button>
+                <button
+                    className="b-tabs__btn g-btn"
+                    onClick={this.handlePopup}
+                >Show single popup</button>
             </div>
         );
     };
@@ -67,6 +71,11 @@ class Home extends Component {
 
     onChange = (e) => {
         this.props.toggleHomeTabs(+e.target.getAttribute('data-index'));
+    };
+
+    handlePopup = () => {
+        console.log('popup click');
+        this.props.handleSinglePopup(true);
     };
 
     render() {
@@ -94,6 +103,10 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                
+                <PopupOverlay
+                    
+                />
                 <Popup
                     content={this.firstTabPopup}
                 />
