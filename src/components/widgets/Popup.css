@@ -12,7 +12,7 @@
 
 .b-popup {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     -webkit-transform: translateY(-50%) translateX(-50%);
@@ -71,10 +71,10 @@
     -webkit-transform: rotate(225deg);
 }
 
-.b-popup__close-btn:hover {
+/*.b-popup__close-btn:hover {
     transform: rotate(720deg);
     -webkit-transform: rotate(720deg);
-}
+}*/
 
 .b-popup__title {
     padding-bottom: 30px;

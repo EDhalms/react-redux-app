@@ -1,6 +1,6 @@
-export function handleWelcomePopup(status) {
+export function handlePopup(actionType, status) {
     return {
-        type: 'HANDLE_WELCOME_POPUP',
+        type: actionType,
         status
     }
 }
