@@ -1,14 +1,21 @@
 let initialSate = {
-    singlePopup: {
+    welcomePopup: {
+        isOpen: false
+    },
+    overLay: {
         isOpen: false
     }
 };
 
 export default function popups(state = initialSate, action) {
     switch (action.type) {
-        case 'HANDLE_SINGLE_POPUP':
+        case 'HANDLE_WELCOME_POPUP':
             return {
-                ...state, singlePopup: {isOpen: action.status}
+                ...state, welcomePopup: {isOpen: action.status}
+            };
+        case 'HANDLE_OVERLAY':
+            return {
+                ...state, overLay: {isOpen: action.status}
             };
         default:
             return state;

@@ -73,9 +73,19 @@ class Home extends Component {
         this.props.toggleHomeTabs(+e.target.getAttribute('data-index'));
     };
 
-    handlePopup = () => {
-        console.log('popup click');
-        this.props.handleSinglePopup(true);
+    handlePopup = (handlePopup, popupType) => {
+        this.props.handleWelcomePopup(!this.props.welcomePopupIsOpen);
+
+        this.handleOverlay(!this.props.overLayIsOpen);
+    };
+
+    handleOverlay = (flag) => {
+        if (flag) { //SHOW OVERLAY
+            document.body.className = 'g-no-scroll';
+        } else {    //HIDE OVERLAY
+            document.body.className = '';
+        }
+        this.props.handleOverlay(flag);
     };
 
     render() {
@@ -103,13 +113,17 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                
+
                 <PopupOverlay
-                    
+                    overLayIsOpen={this.props.overLayIsOpen}
+                    handlePopup={this.handlePopup}
                 />
                 <Popup
-                    content={this.firstTabPopup}
-                />
+                    //content={this.firstTabPopup}
+                    popupIsOpen={this.props.welcomePopupIsOpen}
+                    handlePopup={this.handlePopup}>
+                    {this.firstTabPopup()}
+                </Popup>
             </div>
         );
     }
