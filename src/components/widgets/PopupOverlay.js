@@ -10,7 +10,12 @@ class PopupOverlay extends Component {
     
     render() {
         return(
-            <div className="b-popup-overlay">Overlay</div>
+            <div
+                className={`b-popup-overlay ${this.props.overLayIsOpen ? 'open' : ''}`}
+                onClick={this.props.handlePopup}
+            >
+                Overlay
+            </div>
         )
     }
 }

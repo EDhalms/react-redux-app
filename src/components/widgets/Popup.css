@@ -24,6 +24,10 @@
     line-height: 1.3;
 }
 
+.b-popup-overlay.open {
+    display: block;
+}
+
 .b-popup.open {
     display: block;
 }

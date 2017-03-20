@@ -9,16 +9,18 @@ import * as popupsActions from '../../../actions/popups';
 function mapStateToProps(state) {
     return {
         currentTab: state.tabs.homeTabs.currentTab,
-        
-        singlePopupIsOpen: state.popups.singlePopup.isOpen
+
+        overLayIsOpen: state.popups.overLay.isOpen,
+        welcomePopupIsOpen: state.popups.welcomePopup.isOpen
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         toggleHomeTabs: tabsActions.toggleHomeTabs,
-        
-        handleSinglePopup: popupsActions.handleSinglePopup
+
+        handleOverlay: popupsActions.handleOverlay,
+        handleWelcomePopup: popupsActions.handleWelcomePopup
     }, dispatch)
 }
 

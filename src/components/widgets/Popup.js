@@ -10,11 +10,11 @@ class Popup extends Component {
 
     render() {
         return (
-            <div className="b-popup">
+            <div className={`b-popup ${this.props.popupIsOpen ? 'open' : ''}`}>
                 <div className="b-popup__container">
-                    <div className="b-popup__close-btn">Close</div>
+                    <div className="b-popup__close-btn" onClick={this.props.handlePopup}>Close</div>
                     <div className="b-popup__content">
-                        {this.props.content()}
+                        {this.props.children}
                     </div>
                 </div>
             </div>

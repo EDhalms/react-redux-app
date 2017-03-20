@@ -2,6 +2,10 @@ a {
     transition: color, opacity .3s;
 }
 
+.g-no-scroll {
+    overflow: hidden;
+}
+
 .g-page {
     height: 4000px;
 }
