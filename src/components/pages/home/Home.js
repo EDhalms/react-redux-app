@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import PopupOverlay from '../../widgets/PopupOverlay';
 import Popup from '../../widgets/Popup';
 
 import './Home.css';
@@ -49,7 +48,7 @@ class Home extends Component {
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <button
                     className="b-tabs__btn g-btn"
-                    onClick={this.handlePopup}
+                    onClick={this.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.welcomePopupIsOpen)}
                 >Show single popup</button>
             </div>
         );
@@ -76,7 +75,7 @@ class Home extends Component {
     handlePopup = (actionType, popupStatus) => {
         this.props.handlePopup(actionType, popupStatus);
 
-        this.handleOverlay(!this.props.overLayIsOpen);
+        //this.handleOverlay(!this.props.overLayIsOpen);
     };
 
     handleOverlay = (flag) => {
@@ -113,15 +112,10 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-
-                <PopupOverlay
-                    overLayIsOpen={this.props.overLayIsOpen}
-                    handlePopup={this.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.welcomePopupIsOpen)}
-                />
                 <Popup
                     //content={this.firstTabPopup}
                     popupIsOpen={this.props.welcomePopupIsOpen}
-                    handlePopup={this.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.welcomePopupIsOpen)}>
+                    handlePopup={this.handlePopup}>
                     {this.firstTabPopup()}
                 </Popup>
             </div>

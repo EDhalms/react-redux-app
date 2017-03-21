@@ -4,10 +4,3 @@ export function handlePopup(actionType, status) {
         status
     }
 }
-
-export function handleOverlay(status) {
-    return {
-        type: 'HANDLE_OVERLAY',
-        status
-    }
-}

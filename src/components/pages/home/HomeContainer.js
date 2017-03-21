@@ -10,7 +10,7 @@ function mapStateToProps(state) {
     return {
         currentTab: state.tabs.homeTabs.currentTab,
 
-        overLayIsOpen: state.popups.overLay.isOpen,
+        //overLayIsOpen: state.popups.overLay.isOpen,
         welcomePopupIsOpen: state.popups.welcomePopup.isOpen
     }
 }
@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         toggleHomeTabs: tabsActions.toggleHomeTabs,
 
-        handleOverlay: popupsActions.handleOverlay,
+        //handleOverlay: popupsActions.handleOverlay,
         handlePopup: popupsActions.handlePopup
     }, dispatch)
 }
