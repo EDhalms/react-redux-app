@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch) {
         toggleHomeTabs: tabsActions.toggleHomeTabs,
 
         handleOverlay: popupsActions.handleOverlay,
-        handleWelcomePopup: popupsActions.handleWelcomePopup
+        handlePopup: popupsActions.handlePopup
     }, dispatch)
 }
 

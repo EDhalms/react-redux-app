@@ -73,8 +73,8 @@ class Home extends Component {
         this.props.toggleHomeTabs(+e.target.getAttribute('data-index'));
     };
 
-    handlePopup = (handlePopup, popupType) => {
-        this.props.handleWelcomePopup(!this.props.welcomePopupIsOpen);
+    handlePopup = (actionType, popupStatus) => {
+        this.props.handlePopup(actionType, popupStatus);
 
         this.handleOverlay(!this.props.overLayIsOpen);
     };
@@ -116,12 +116,12 @@ class Home extends Component {
 
                 <PopupOverlay
                     overLayIsOpen={this.props.overLayIsOpen}
-                    handlePopup={this.handlePopup}
+                    handlePopup={this.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.welcomePopupIsOpen)}
                 />
                 <Popup
                     //content={this.firstTabPopup}
                     popupIsOpen={this.props.welcomePopupIsOpen}
-                    handlePopup={this.handlePopup}>
+                    handlePopup={this.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.welcomePopupIsOpen)}>
                     {this.firstTabPopup()}
                 </Popup>
             </div>

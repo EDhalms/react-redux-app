@@ -16,6 +16,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 #idea
 .idea
 
+=======
+.idea
+>>>>>>> 817cb4c8a34e0f7b9664e8a0dfbe64db1686d183
