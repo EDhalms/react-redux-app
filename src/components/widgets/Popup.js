@@ -13,13 +13,13 @@ class Popup extends Component {
             <div className={`b-popup-wrap ${this.props.popupIsOpen ? 'open' : ''}`}>
                 <div
                     className={`b-popup-overlay ${this.props.popupIsOpen ? 'open' : ''}`}
-                    onClick={this.props.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.popupIsOpen)}
+                    onClick={this.props.handlePopup.bind(this, this.props.actionType, !this.props.popupIsOpen, false)}
                 >
                     Overlay
                 </div>
                 <div className={`b-popup ${this.props.popupIsOpen ? 'open' : ''}`}>
                     <div className="b-popup__container">
-                        <div className="b-popup__close-btn" onClick={this.props.handlePopup.bind(this, 'HANDLE_WELCOME_POPUP', !this.props.popupIsOpen)}>Close</div>
+                        <div className="b-popup__close-btn" onClick={this.props.handlePopup.bind(this, this.props.actionType, !this.props.popupIsOpen, false)}>Close</div>
                         <div className="b-popup__content">
                             {this.props.children}
                         </div>

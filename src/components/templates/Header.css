@@ -11,6 +11,7 @@
 .b-header.scroll {
     color: #555;
     background-color: #fff;
+    opacity: .9;
     border-bottom-color: #999;
 }
 

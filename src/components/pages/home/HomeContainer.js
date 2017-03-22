@@ -10,8 +10,10 @@ function mapStateToProps(state) {
     return {
         currentTab: state.tabs.homeTabs.currentTab,
 
-        //overLayIsOpen: state.popups.overLay.isOpen,
-        welcomePopupIsOpen: state.popups.welcomePopup.isOpen
+        popups: state.popups,
+        welcomePopupIsOpen: state.popups.welcomePopup.isOpen,
+        firstStepPopup: state.popups.firstStepPopup.isOpen,
+        secondStepPopup: state.popups.secondStepPopup.isOpen
     }
 }
 
