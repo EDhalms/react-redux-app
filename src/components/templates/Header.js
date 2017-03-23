@@ -42,7 +42,8 @@ class Header extends Component {
 
         const items = [
             {name: 'About', route: 'about'},
-            {name: 'Blog', route: 'blog'}
+            {name: 'Blog', route: 'blog'},
+            {name: 'Contact', route: 'contact'}
         ];
         //this.onHandleScroll();
 
@@ -50,7 +51,7 @@ class Header extends Component {
             <header className={`b-header ${this.props.pageIsScrolling ? 'scroll' : ''}`}>
                 <div className="b-header__container g-container g-clearfix">
                     <div className="b-header__logo">
-                        <a href="/">React-redux-app</a>
+                        <Link to="/">React-redux-app</Link>
                     </div>
                     <nav className="b-header__nav">
                         <ul className="b-header__list g-clearfix">

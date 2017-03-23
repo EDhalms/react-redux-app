@@ -19,7 +19,12 @@ class Popup extends Component {
                 </div>
                 <div className={`b-popup ${this.props.popupIsOpen ? 'open' : ''}`}>
                     <div className="b-popup__container">
-                        <div className="b-popup__close-btn" onClick={this.props.handlePopup.bind(this, this.props.actionType, !this.props.popupIsOpen, false)}>Close</div>
+                        <div
+                            className="b-popup__close-btn"
+                            onClick={this.props.handlePopup.bind(this, this.props.actionType, !this.props.popupIsOpen, false)}
+                        >
+                            Close
+                        </div>
                         <div className="b-popup__content">
                             {this.props.children}
                         </div>

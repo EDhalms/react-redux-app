@@ -68,12 +68,12 @@
     position: absolute;
     top: 9px;
     width: 3px;
-    height: 22px;
+    height: 23px;
     background-color: #c43b3b;
 }
 
 .b-popup__close-btn:before {
-    left: 18px;
+    left: 19px;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
@@ -84,12 +84,10 @@
     -webkit-transform: rotate(225deg);
 }
 
-/*
 .b-popup__close-btn:hover {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
 }
-*/
 
 .b-popup__title {
     padding-bottom: 30px;

@@ -24,10 +24,6 @@ export default function popups(state = initialSate, action) {
             return {
                 ...state, secondStepPopup: {isOpen: action.status}
             };
-        case 'CLOSE_ALL_POPUPS':
-            return {
-                ...state,  ...action.status
-            };
         default:
             return state;
     }

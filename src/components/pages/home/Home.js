@@ -84,7 +84,7 @@ class Home extends Component {
                 </p>
                 <button
                     className="b-tabs__btn g-btn"
-                    onClick={this.handlePopup.bind(this, 'HANDLE_SECOND_STEP_POPUP', !this.props.secondStepPopup, false)}
+                    onClick={this.handlePopup.bind(this, 'HANDLE_FIRST_STEP_POPUP', !this.props.firstStepPopup, false)}
                 >Show first step popup</button>
             </div>
         );
@@ -116,7 +116,7 @@ class Home extends Component {
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <button
                     className="b-popup__btn g-btn"
-                    onClick={this.handlePopup.bind(this, 'HANDLE_FIRST_STEP_POPUP', !this.props.firstStepPopup, true)}
+                    onClick={this.handlePopup.bind(this, 'HANDLE_FIRST_STEP_POPUP', !this.props.firstStepPopup, true, 'HANDLE_SECOND_STEP_POPUP', !this.props.secondStepPopup)}
                 >To next step</button>
             </div>
         );
@@ -142,35 +142,30 @@ class Home extends Component {
         this.props.toggleHomeTabs(+e.target.getAttribute('data-index'));
     };
 
-    handlePopup = (actionType, popupStatus, closePrevPopup) => {
-        if (closePrevPopup) {
-            this.closePrevPopup();
-
+    handlePopup = (actionType, popupStatus, isClosePrevPopup, actionTypeNextPopup, popupStatusNextPopup) => {
+        if (isClosePrevPopup) {//if need open popup from prev popup
             this.props.handlePopup(actionType, popupStatus);
+            this.props.handlePopup(actionTypeNextPopup, popupStatusNextPopup);
         } else {
             this.props.handlePopup(actionType, popupStatus);
         }
 
-
-        this.handleNoScrollPage(!this.props.welcomePopupIsOpen);
+        //this.handleNoScrollPage(popupStatus, popupStatusNextPopup);
     };
 
-    closePrevPopup = () => {
-        console.log(this.props.popups);
+    handleNoScrollPage = (popupStatus, popupStatusNextPopup) => {
 
-        for (let popup in this.props.popups) {
-            if (popup.isOpen) {
-                this.props.handlePopup('CLOSE_ALL_POPUPS', this.props.popups);
-            }
-        }
-    };
+        console.log('popupStatus - ', popupStatus);
+        console.log('popupStatusNextPopup - ', popupStatusNextPopup);
+        console.log('popupStatusNextPopup - ', !!popupStatusNextPopup);
+        console.log('popupStatus || popupStatusNextPopup - ', popupStatus || popupStatusNextPopup);
 
-    handleNoScrollPage = (flag) => {
-        if (flag) { //POPUP IS OPEN
+        if (popupStatus || popupStatusNextPopup) {
             document.body.className = 'g-no-scroll';
-        } else {    //POPUP IS HIDE
+        } else {
             document.body.className = '';
         }
+
     };
 
     render() {
@@ -182,7 +177,7 @@ class Home extends Component {
         ];
 
         return (
-            <div className={`b-home`}>
+            <div className="b-home">
                 <div className="g-banner m-banner_home">
                     <div className="g-banner__container g-container">
                         <h1 className="g-banner__title">Home</h1>
