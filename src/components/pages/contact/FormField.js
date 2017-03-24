@@ -14,17 +14,23 @@ class FormField extends Component {
         }
     };
 
+    handleValidateInput = () => {
+        this.props.onFocusOutInput();
+    };
+
     render() {
         return (
             <div className="b-form__field">
                 <input
-                    className={`b-form__input`}
+                    className={`b-form__input ${this.props.inputValue.length ? 'dirty' : ''}`}
                     type={this.props.inputType}
+                    value={this.props.inputValue}
                     onChange={this.handleChangeInput}
+                    onBlur={this.handleValidateInput}
                 />
                 <label className="b-form__label">{this.props.label}</label>
-                <div className={`b-form__focus-line`}>&nbsp;</div>
-                <div className={`b-form__notification`}>Invalid {this.props.label}</div>
+                <div className={`b-form__focus-line ${this.props.inputIsValid ? '' : 'error'}`}>&nbsp;</div>
+                <div className={`b-form__notification ${this.props.inputIsValid ? '' : 'error'}`}>Invalid {this.props.label}</div>
             </div>
         )
     }
