@@ -9,7 +9,7 @@ let initialState = {
         lastNameIsValid: true,
         emailIsValid: true
     },
-    formSubmit: {
+    formSubmitStatus: {
         formIsSubmitted: false
     }
 };
@@ -26,7 +26,7 @@ export default function contactForm(state = initialState, action) {
             };
         case 'SUBMIT_FORM':
             return {
-                ...state, formSubmit: action.status
+                ...state, formSubmitStatus: action.status
             };
         default:
             return state;

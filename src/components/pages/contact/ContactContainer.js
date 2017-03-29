@@ -9,7 +9,7 @@ function mapStateToProps(state) {
     return {
         userData: state.contactForm.userData,
         errors: state.contactForm.errors,
-        formSubmit: state.contactForm.formSubmit
+        formSubmitStatus: state.contactForm.formSubmitStatus
     }
 }
 

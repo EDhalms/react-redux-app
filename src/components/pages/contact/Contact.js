@@ -32,10 +32,9 @@ class Contact extends Component {
         }
     };
 
-    validateForm = () => {
+    validateForm = (errorsCounter) => {
         let emptyFields = {},
-            payload = {},
-            errorsCounter = 0;
+            payload = {};
 
         for (let field in this.props.userData) {//we are checking each field on empty
             if (!this.props.userData[field].length) {
@@ -48,26 +47,28 @@ class Contact extends Component {
         payload = {...this.props.errors, ...emptyFields};
         this.props.validateInput(payload);//dispatch empty fields
 
-        /*for (let error in this.props.errors) {
-            console.log(this.props.errors[error]);
-            if(this.props.errors[error]) {
-                errorsCounter+=1;
+        for (let error in payload) {
+            //console.log(payload[error]);
+            if (!payload[error]) {
+                errorsCounter.push(error);
             }
         }
 
-        console.log(errorsCounter);
-
-        if (!errorsCounter) {
-            console.log('form can bee submit');
-        } else {
-            console.log('form can NOT bee submit');
-        }*/
     };
 
     submitForm = (e) => {
         e.preventDefault();
 
-        this.validateForm();
+        let errorsCounter = [];
+
+        this.validateForm(errorsCounter);
+        if(errorsCounter.length) {
+            console.log('length of errors is - ' + errorsCounter.length + ', so form is NOT valid');
+        } else {
+            console.log('it is OK!');
+            this.props.submitForm(this.buildPayload('formIsSubmitted', true, this.props.formSubmitStatus));
+        }
+
     };
 
     buildPayload = (type, value, state) => {
