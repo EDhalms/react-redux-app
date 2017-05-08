@@ -1,4 +1,8 @@
 .m-banner_blog {
-    height: 700px;
-    background-image: url("../../../../public/img/banner-bg-blog-2.jpg");
+    /*height: 700px;*/
+    background-image: url("../../../../public/img/banner-bg-2.jpg");
+}
+
+.thumbnail {
+    box-shadow: 0 0 6px 1px rgba(33,153,232,.5);
 }

@@ -10,6 +10,7 @@ import App from './components/App';
 import Home from './components/pages/home/HomeContainer';
 import About from './components/pages/about/AboutContainer';
 import Blog from './components/pages/blog/BlogContainer';
+import Contact from './components/pages/contact/ContactContainer';
 /*components*/
 
 import {store} from './store/store';
@@ -23,8 +24,10 @@ ReactDOM.render(
                 <IndexRoute component={Home}/>
                 <Route path='about' component={About}/>
                 <Route path='blog' component={Blog}/>
+                <Route path='contact' component={Contact}/>
             </Route>
         </Router>
     </Provider>,
     document.getElementById('root')
 );
+
