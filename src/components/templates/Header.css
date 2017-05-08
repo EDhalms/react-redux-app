@@ -30,7 +30,7 @@
 }
 
 .b-header__logo a:hover {
-    opacity: .7;
+    color: #d4d4d4;
 }
 
 .b-header a {
@@ -61,10 +61,10 @@
     color: #8D9FFF;
 }
 
-.b-header__link.active:hover {
-    opacity: 1;
+.b-header__link:hover {
+   color: #d4d4d4;
 }
 
-.b-header__link:hover {
-    opacity: .7;
+.b-header__link.active:hover {
+    color: #8D9FFF;
 }
